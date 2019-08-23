@@ -1,0 +1,43 @@
+<html> 
+<head> 
+<meta charset="uTF-8">
+<title>Test of cloneNode Method</title> 
+<!-- <script type="text/javascript" src="/static/js/test.js">
+</script> --> 
+</head> 
+<body> 
+<div id="main"  > 
+
+<div id="div-0" style="padding:30px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+<span style="position:absolute;left:33px;top:28px;">设备序列号</span>
+<span style="position:absolute;left:200px;top:28px;">设备别名 </span>
+<span style="position:absolute;left:362px;top:28px;">当前版本号 </span>  
+<span style="position:absolute;left:500px;top:28px;">最新版本号</span> 
+<span style="position:absolute;left:1000px;top:28px;">是否更新</span> 
+</div>
+
+{%for info in info%}
+<div id="div-0" style="padding:30px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+<span style="position:absolute;left:33px;top:28px;">{{info.sn}}</span>
+<span style="position:absolute;left:200px;top:28px;">{{info.alias}}</span>
+<span style="position:absolute;left:362px;top:28px;">{{info.now_version}}</span>  
+<span style="position:absolute;left:500px;top:28px;">{{info.new_version}}</span> 
+<span style="position:absolute;left:1000px;top:28px;">
+{% if info.now_version == info.new_version%}
+<a  href ="javascript:return false;" onclick="return false;" style="cursor: default;"><i class="edit" style="opacity: 0.2">点击更新</i></a>
+{% else %}
+<a href="{% url 'updateVersion' info.sn %}">点击更新</a>
+{% endif %}
+</span> 
+</div>
+{% endfor %}
+</div> 
+{% if messages %}
+		<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+		{% endif %}
+</body> 
+</html> 

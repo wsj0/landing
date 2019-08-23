@@ -1,0 +1,682 @@
+.u-userInfo-container {
+    left: 0px;
+    top: 0px;
+    width: 1260px;
+    height: 220px;
+    position: relative;
+    display: block;
+    min-width: 0px;
+    z-index: 0;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 0px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.u-ui-img_a35 {
+    display: inline-block;
+    width: 100%;
+    height: 96px;
+}
+
+.u-ui-img_img36 {
+    width: 96px;
+    height: 96px;
+    border-radius: 50px;
+}
+
+.u-ui-img_a37 {
+    color: #fff;
+}
+
+.u-ui-img {
+    left: 37px;
+    top: 40px;
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    display: block;
+    min-width: 0px;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-width: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    margin: 0px;
+    padding: 0px;
+    cursor: auto;
+}
+
+.u-ui-img:hover {
+}
+
+.e-hover-source:hover .e-hover-target {
+    display: block;
+}
+
+.e-hover-source:hover .e-hover-code {
+    display: block;
+}
+
+.e-hover-target {
+    display: none;
+    position: absolute;
+    left: 50%;
+    margin-top: -2px;
+    padding-top: 14px;
+    top: 100%;
+}
+
+.e-hover-target.left {
+    top: -50%;
+    margin-right: -2px;
+    padding-right: 14px;
+    padding-top: 0px;
+    right: 100%;
+    left: auto;
+}
+
+.e-hover-code {
+    display: none;
+}
+
+.e-hover-arrow {
+    position: absolute;
+    top: 5px;
+    width: 1px;
+    height: 1px;
+    border: 9px solid transparent;
+    border-bottom-color: #ddd;
+    z-index: 3;
+    border-top-width: 0px;
+}
+
+.e-hover-arrow.left {
+    position: absolute;
+    width: 1px;
+    right: 5px;
+    height: 1px;
+    border: 9px solid transparent;
+    border-left-color: #ddd;
+    z-index: 3;
+    border-right-width: 0px;
+}
+
+.e-hover-arrow-border {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: 6px;
+    border: 9px solid transparent;
+    border-bottom-color: #fff;
+    border-top-width: 0px;
+    z-index: 3;
+}
+
+.e-hover-arrow-border.left {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    right: 6px;
+    border: 9px solid transparent;
+    border-left-color: #fff;
+    border-right-width: 0px;
+    z-index: 3;
+}
+
+.e-hover-content {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 15px 15px 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.u-ui-name_span38 {
+    line-height: 35px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 26px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-name {
+    left: 167px;
+    top: 38px;
+    width: 564px;
+    height: 35px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 35px;
+}
+
+.u-ui-tag_span39 {
+    line-height: 13px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-tag {
+    left: 167px;
+    top: 78px;
+    width: 564px;
+    height: 17px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 13px;
+}
+
+.u-ui-desc_span40 {
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-desc_span40:hover {
+}
+
+.u-ui-desc {
+    left: 167px;
+    top: 147px;
+    width: 560px;
+    height: 40px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 3;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 20px;
+}
+
+.u-ui-desc:hover {
+}
+
+.f-fl {
+    float: left;
+}
+
+.f-fr {
+    float: right;
+}
+
+.f-line, .f-thide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f-cb:after {
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: ".";
+}
+
+.f-2lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.f-3lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.f-4lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.u-ui-box_div41 {
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: 220px;
+    position: relative;
+    display: block;
+    min-width: 0px;
+    z-index: 0;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 0px;
+    margin: 0px auto;
+    padding: 0px;
+}
+
+.u-ui-box_div41:hover {
+}
+
+.u-ui-box_div42 {
+    left: 342px;
+    top: 101px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 40px;
+}
+
+.u-ui-box_span43 {
+    line-height: 40px;
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-box_div44 {
+    left: 394px;
+    top: 98px;
+    width: 61px;
+    height: 19px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 19px;
+}
+
+.u-ui-box_span45 {
+    line-height: 19px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-box_div46 {
+    left: 0px;
+    top: 120px;
+    width: auto;
+    height: 24px;
+    position: relative;
+    font-size: 0px;
+    display: block;
+    min-width: 67px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px 0px 0px 394px;
+    padding: 0px;
+    line-height: 24px;
+}
+
+.u-ui-box_span47 {
+    line-height: 24px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-box_div48 {
+    left: 150px;
+    top: 100px;
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.u-ui-box_div49 {
+    left: 0px;
+    top: 101px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 40px;
+}
+
+.u-ui-box_span50 {
+    line-height: 40px;
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-box_div51 {
+    left: 50px;
+    top: 97px;
+    width: 70px;
+    height: 19px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 19px;
+}
+
+.u-ui-box_span52 {
+    line-height: 19px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-box_div53 {
+    left: 50px;
+    top: 120px;
+    width: 90px;
+    height: 24px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 24px;
+}
+
+.u-ui-box_span54 {
+    line-height: 24px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-box_div55 {
+    left: 311px;
+    top: 100px;
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.u-ui-box_div56 {
+    left: 180px;
+    top: 100px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 40px;
+}
+
+.u-ui-box_span57 {
+    line-height: 40px;
+    display: inline-block;
+    width: 100%;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-box_div58 {
+    left: 225px;
+    top: 97px;
+    width: 70px;
+    height: 19px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 19px;
+}
+
+.u-ui-box_span59 {
+    line-height: 19px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-box_div60 {
+    left: 225px;
+    top: 120px;
+    width: 80px;
+    height: 24px;
+    position: absolute;
+    font-size: 0px;
+    display: block;
+    min-width: 0px;
+    z-index: 4;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 24px;
+}
+
+.u-ui-box_span61 {
+    line-height: 24px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-box {
+    left: 0px;
+    top: -10px;
+    width: auto;
+    height: 220px;
+    position: relative;
+    min-width: 0px;
+    z-index: 0;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+.u-ui-box:hover {
+}
+
+.u-ui-follow_span62 {
+    line-height: 30px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 14px;
+    color: rgb(255, 122, 62);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-follow_span62:hover {
+    cursor: pointer;
+}
+
+.u-ui-follow {
+    left: 53px;
+    top: 154px;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    font-size: 0px;
+    min-width: 0px;
+    z-index: 0;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+    line-height: 30px;
+}
+
+.u-ui-follow:hover {
+    cursor: pointer;
+}
+
+.u-ui-f2f_span63 {
+    line-height: normal;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.u-ui-f2f_span63 span {
+    cursor: pointer;
+}
+
+.u-ui-f2f {
+    left: 167px;
+    top: 102px;
+    width: 500px;
+    height: 21px;
+    position: absolute;
+    font-size: 0px;
+    min-width: 0px;
+    z-index: 0;
+    color: rgb(0, 0, 0);
+    border-radius: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.u-ui-f2f span {
+    cursor: pointer;
+}
+
+.u-ui-unfollow_span64 {
+    line-height: 30px;
+    display: inline-block;
+    width: 100%;
+    font-family: 微软雅黑, "Microsoft YaHei";
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.u-ui-unfollow_span64:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000;
+}
+

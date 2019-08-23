@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>111</title>
+</head>
+
+<body>
+<form id="form1" method="post" action="/originalInfo/">
+	<a href="/toAddDevice/" target="mainFrame">添加设备</a>
+		<h3 class="subTitle" align="center">	
+			设备管理
+			<div class="search">
+				 <input type="datetime-local" name="starttime" id="starttime"
+					value='' size="5"/>~
+					<input type="datetime-local" name="endtime" id="endtime"
+					value='' size="5"/>
+					 <input
+					type="submit" name="Submit" class="btn_grey" value="搜索" />
+
+			</div>
+		</h3>
+		<br />
+</form>
+			<div id="main"  > 
+
+<div id="div-0" style="padding:40px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+<span style="position:absolute;left:33px;top:28px;">序列号</span>
+<span style="position:absolute;left:362px;top:28px;">别名</span>
+<span style="position:absolute;left:600px;top:28px;">版本号</span>  
+</div>
+		{%for data in info%}
+<div id="div-0" style="padding:30px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+<span style="position:absolute;left:33px;top:28px;">{{data.sn}}</span>
+<span style="position:absolute;left:362px;top:28px;">{{data.alias}}</span>  
+<span style="position:absolute;left:600px;top:28px;">{{data.now_version}}</span> 
+</div>
+{% endfor %}
+</div> 
+	<!-- <div>
+			<p>
+				总页数，当前页，总记录数
+				<mayi:page
+					url="${pageContext.request.contextPath}/teacher/toQuestion?curPage"
+					totalPage="${page.totalPage }" curPage="${page.curPage }"
+					rows="${page.rows }"></mayi:page>
+			</p>
+		</div> -->
+</body>
+</html>

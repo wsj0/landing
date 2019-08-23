@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>忘记密码</title>
+<link rel="stylesheet" href="/static/base/user/css/global.css">
+<link rel="stylesheet" href="/static/base/user/css/style.css">
+<link rel="stylesheet"
+	href="http://passport.itheima.com/Home/layer/skin/layer.css"
+	id="layui_layer_skinlayercss">
+<!--按钮生成器— http://www.jb51.net-->
+<style>
+
+.thisclass{background-color:#9999FF}
+
+</style>
+<script language="javascript">
+
+function change(color){
+var el=event.srcElement
+if (el.tagName=="INPUT"&&el.type=="button")
+event.srcElement.style.backgroundColor=color
+}
+
+function jumpto2(url){
+window.location=url
+}
+
+</script>
+
+</head>
+<body>
+	<div class="header">
+		<strong>忘记密码</strong>
+		
+	</div>
+	<div class="login_box login_js posi">
+		<div class="inner">
+			<div class="inner_l">
+				<div class="cha_box">
+					<div class="cha_list cur">
+						<form action="/forget/" method="post" onsubmit="return checkName();">
+							<div class="line">
+								<input type="text" name="username" 
+									placeholder="注册时的手机号" title="注册时的手机号" maxlength="11"  onkeyup="value=value.replace(/[^\d]/g,'')"
+									 id="username">
+							</div>
+							<table><tr><td>
+							<div class="line" style="width: 160px;margin-left:20px;">
+									<input type="text" name="input1" 
+									placeholder="验证码" title="验证码"  id="yzmTest"
+									/></div>
+							</td>
+							<td>
+								<input type="button" name="Button" class="thisclass" value="获取验证码" onMouseOver="this.style.color='#FFFFFF'" onMouseOut="this.style.color='#FFFFFF'" onMouseDown="this.style.color='#FFFFFF'" style="color:#FFFFFF; font-family:Birch; font-weight:Regular; font-size:18px;" onClick="yzmPhone()">
+							</td>
+							</tr>
+							<tr><td><div class="line">
+								<input type="submit" value="立即验证" class="confirm agd" >
+							</div></td></tr>
+							</table>
+									
+						</form>
+						 </div>
+            
+            </div>
+						
+	 </div>
+        <div class="inner_r">
+            <div class="rtop">
+                <span>我还可以</span><br>
+                <a href="/register/">注册 →</a><br>
+                <a href="/login/">登陆 →</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script  src="/static/base/user/js/jquery-3.1.1.min.js"></script>
+<script  src="/static/base/user/js/qj.js"></script>
+<script  src="/static/base/user/layer/layer.js"></script>
+<p class="copy">
+<iframe style="display:none" id="ajaxframe" name="ajaxframe"></iframe>
+   
+{% if messages %}
+<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+{% endif %}
+
+<script>
+var rnd = "";
+function checkName(){
+var test = document.getElementById("username").value;
+var yzmTest = document.getElementById("yzmTest").value;
+if(test.length < 11){
+	alert("请输入正确手机号")
+	return false;
+}
+if(yzmTest.length < 6) {
+    alert("请输入验证码！");
+    return false;
+  }
+if(yzmTest != rnd) {
+    alert("验证码输入错误！");
+    return false;
+  } 
+else{return true}
+}
+</script><script>
+function yzmPhone(){
+    for (var i = 0; i < 6; i++)
+      rnd += Math.floor(Math.random() * 10);
+    alert(rnd)
+    
+     var name = $("#username").val();
+	$.ajax({
+				url : "/sendmessage/",
+				data : {
+					username : name,
+					rnd : rnd
+				},
+				type:'POST',
+				/* dataType : "json", */
+				success : function(callback) {
+					}
+				} 
+	}
+
+</script>
+</body>
+</html>

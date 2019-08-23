@@ -1,0 +1,43 @@
+<html> 
+<head> 
+<meta charset="uTF-8">
+<title>Test of cloneNode Method</title> 
+<!-- <script type="text/javascript" src="/static/js/test.js">
+</script> --> 
+</head> 
+<body> 
+<div id="main"  > 
+{%for counts in count%}
+<div id="div-0" style="padding:30px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+<span style="position:absolute;left:33px;top:28px;">wifi </span>
+<span style="position:absolute;left:382px;top:35px;">℃ </span> 
+<span style="position:absolute;left:525px;top:35px;"> %</span> 
+<span style="position:absolute;left:362px;top:12px;">温度 </span>  
+<span style="position:absolute;left:500px;top:12px;">湿度</span> 
+<span style="position:absolute;left:1000px;top:12px;">更新时间</span> 
+<img src="/static/images/wendu.png" style="width:27px;height:30px;position:absolute;left:330px;top:20px;"/>
+<img src="/static/images/shidu.png" style="width:27px;height:30px;position:absolute;left:460px;top:20px;"/>
+{% if  counts.wifi <= '25' %}
+<img src="/static/images/wifi1.png" style="width:27px;height:30px;position:absolute;left:700px;top:20px;"/>
+{% elif '25' < counts.wifi and counts.wifi <= '50'  %}
+<img src="/static/images/wifi2.png" style="width:27px;height:30px;position:absolute;left:700px;top:20px;"/>
+{% elif '50' < counts.wifi and counts.wifi <=  '75'   %}
+<img src="/static/images/wifi3.png" style="width:27px;height:30px;position:absolute;left:700px;top:20px;"/>
+{% elif '75' < counts.wifi and counts.wifi <= '99' %}
+<img src="/static/images/wifi4.png" style="width:27px;height:30px;position:absolute;left:700px;top:20px;"/>
+{% endif %}
+
+{% if  counts.elec <= '25' %}
+<img src="/static/images/dianchi1.png" style="width:27px;height:30px;position:absolute;left:900px;top:20px;"/>
+{% elif '25' < counts.elec and counts.elec <= '50'  %}
+<img src="/static/images/dianchi2.png" style="width:27px;height:30px;position:absolute;left:900px;top:20px;"/>
+{% elif '50' < counts.elec and counts.elec <=  '75'   %}
+<img src="/static/images/dianchi3.png" style="width:27px;height:30px;position:absolute;left:900px;top:20px;"/>
+{% elif '75' < counts.elec and counts.elec <= '99' %}
+<img src="/static/images/dianchi4.png" style="width:27px;height:30px;position:absolute;left:900px;top:20px;"/>
+{% endif %}
+</div>
+{% endfor %}
+</div> 
+</body> 
+</html> 

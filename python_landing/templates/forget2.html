@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>忘记密码</title>
+<link rel="stylesheet" href="/static/base/user/css/global.css">
+<link rel="stylesheet" href="/static/base/user/css/style.css">
+<link rel="stylesheet"
+	href="http://passport.itheima.com/Home/layer/skin/layer.css"
+	id="layui_layer_skinlayercss">
+<!--按钮生成器— http://www.jb51.net-->
+<style>
+
+.thisclass{background-color:#9999FF}
+
+</style>
+<script language="javascript">
+
+function change(color){
+var el=event.srcElement
+if (el.tagName=="INPUT"&&el.type=="button")
+event.srcElement.style.backgroundColor=color
+}
+
+function jumpto2(url){
+window.location=url
+}
+
+</script>
+
+</head>
+<body>
+	<div class="header">
+		<strong>忘记密码</strong>
+		
+	</div>
+	<div class="login_box login_js posi">
+		<div class="inner">
+			<div class="inner_l">
+				<div class="cha_box">
+					<div class="cha_list cur">
+						<form action="/forget2/" method="post" onsubmit="return checkName();">
+							<div class="line">
+								<input type="password" name="password" 
+									placeholder="请输入新密码" title="请输入新密码" maxlength="11"  
+									 id="password">
+							</div>
+							<div class="line">
+								<input type="password" name="password1" 
+									placeholder="请确认新密码" title="请确认新密码" maxlength="11"  
+									 id="password1">
+							</div>
+							<div class="line">
+								<input type="submit" value="立即验证" class="confirm agd" >
+							</div>
+									
+						</form>
+						 </div>
+            
+            </div>
+						
+	 </div>
+        <div class="inner_r">
+            <div class="rtop">
+                <span>我还可以</span><br>
+                <a href="/register/">注册 →</a><br>
+                <a href="/login/">登陆 →</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script  src="/static/base/user/js/jquery-3.1.1.min.js"></script>
+<script  src="/static/base/user/js/qj.js"></script>
+<script  src="/static/base/user/layer/layer.js"></script>
+<p class="copy">
+<iframe style="display:none" id="ajaxframe" name="ajaxframe"></iframe>
+   
+{% if messages %}
+<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+{% endif %}
+
+<script>
+function checkName(){
+	var test = document.getElementById("password").value;
+	var test1 = document.getElementById("password1").value;
+	if(test!=test1){
+		alert("两次输入密码不一致")
+		return false;
+	}
+	else{return true}
+	}
+</script>
+</body>
+</html>

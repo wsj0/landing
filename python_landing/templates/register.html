@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>注册 - 用户中心</title>
+<meta name="keywords" content="[keywords]">
+<meta name="description" content="[description]">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport">
+<meta name="__hash__"
+	content="d5268c3f3e0bc5a2a801c637707dc503_4d006d06fe469dcec0647ef19eebf5a7" />
+<link rel="stylesheet" href="/static/base/user/css/global.css">
+<link rel="stylesheet" href="/static/base/user/css/style.css">
+</head>
+<body>
+	<!-- 内容区域 start -->
+	<div class="header">
+		<strong>注册界面</strong>
+	</div>
+	<div class="login_box login_js posi">
+		<div class="inner">
+			<div class="inner_l">
+				<div class="hdbox"></div>
+				<div class="cha_box">
+					<div class="cha_list cur">
+						<form  action="/register/" method="post" onsubmit="return checkName();">
+							<div class="line">
+								<input type="text" name="username" id="username"
+									placeholder="请输入手机号" title="请输入手机号" autocomplete="off"
+									 maxlength="11"
+									onkeyup="value=value.replace(/[^\d]/g,'')">
+							</div>
+                       <div id="v_container" style="width: 200px;height: 50px;margin-left:20px;"></div>
+							 <div class="line" ><br>
+										<input type="text" name="code_input" id="code_input"
+											placeholder="请输入验证码" title="请输入验证码" autocomplete="off"
+											 maxlength="5">
+							</div>
+							<!-- 
+							 <div class="line" style="width: 160px;margin-left:20px;">
+										<input type="text" name="code_input" id="code_input"
+											placeholder="请输入验证码" title="请输入验证码" autocomplete="off"
+											onClick="this.select();" maxlength="4">
+							</div> -->
+							<!-- <div class="line yzline">
+								<ul id="emailpasstip">
+									<li>弱</li>
+									<li>中</li>
+									<li>强</li>
+								</ul>
+							</div> -->
+							<div class="line line2">
+								<input type="submit" value="下一步" class="confirm agd" id="my_button"
+									>
+							</div>
+							<input type="hidden" name="__hash__"
+								value="d5268c3f3e0bc5a2a801c637707dc503_4d006d06fe469dcec0647ef19eebf5a7" />
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div class="inner_r">
+				<div class="rtop">
+					<span>已经注册过?</span></br> <a href="/login/">直接登录 →</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="res_info" style="display: none">平台服务条款</div>
+	<script src="/static/base/user/js/qj.js"></script>
+	<script src="/static/base/user/layer/layer.js"></script>
+	<script src="/static/js/jquery-3.1.1.min.js"></script>
+	<p class="copy"></p>
+	<iframe style="display: none" id="ajaxframe" name="ajaxframe"></iframe>
+	
+	{% if messages %}
+	<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+	{% endif %}
+	
+ <script src="/static/base/user/js/gVerify.js"></script>
+   <script>
+        var verifyCode = new GVerify("v_container");
+    </script>
+    <script>
+function checkName(){
+var test = document.getElementById("username").value;
+var res = verifyCode.validate(document.getElementById("code_input").value);
+if(test.length < 11){
+	alert("请输入正确手机号")
+	return false;
+}
+if(res==false){
+    alert("验证码错误");
+    return false;
+}
+else{return true}
+}
+</script>
+</body>
+</html>

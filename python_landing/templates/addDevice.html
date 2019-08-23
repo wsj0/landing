@@ -1,0 +1,28 @@
+<html> 
+<head> 
+<meta charset="uTF-8">
+<title>Test of cloneNode Method</title> 
+<!-- <script type="text/javascript" src="/static/js/test.js">
+</script> --> 
+</head> 
+<body> 
+<div id="main"  > 
+
+<div id="div-0" style="padding:30px;border:1px solid #96c2f1;background:#FFFFFF;position:relative"> 
+
+<form action="/addDevice/" method="post">
+<span style="position:absolute;left:33px;top:28px;">设备序列号:<input type="text" id="sn" name="sn"/></span>
+<span style="position:absolute;left:33px;top:50px;"><input type="submit" value="提交"/> </span>  
+</form>
+</div>
+
+</div> 
+{% if messages %}
+		<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+		{% endif %}
+</body> 
+</html> 

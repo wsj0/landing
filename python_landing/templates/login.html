@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<link rel="stylesheet" href="/static/base/user/css/global.css">
+<link rel="stylesheet" href="/static/base/user/css/style.css">
+<link rel="stylesheet"
+	href="http://passport.itheima.com/Home/layer/skin/layer.css"
+	id="layui_layer_skinlayercss">
+<style>
+.drag {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #e8e8e8;
+	position: relative;
+	margin: 0 auto;
+}
+
+.bg {
+	width: 40px;
+	height: 100%;
+	position: absolute;
+	background-color: #75CDF9;
+}
+
+.text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	user-select: none;
+}
+
+.btn {
+	width: 40px;
+	height: 38px;
+	position: absolute;
+	border: 1px solid #ccc;
+	cursor: move;
+	font-family: "宋体";
+	text-align: center;
+	background-color: #fff;
+	user-select: none;
+	color: #666;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<strong>登录界面</strong>
+
+	</div>
+	<div class="login_box login_js posi">
+		<div class="inner">
+			<div class="inner_l">
+				<div class="cha_box">
+					<div class="cha_list cur">
+						<form action="/login/" method="post"
+							onsubmit="return checkName();">
+							<div class="line">
+								<input type="text" name="username" placeholder="请输入手机号"
+									title="请输入手机号" id="username" maxlength="11"
+									onkeyup="value=value.replace(/[^\d]/g,'')" value={{data}}>
+							</div>
+							<div class="line line2">
+								<input type="password" name="password" placeholder="请输入密码"
+									title="请输入密码" id="password">
+							</div>
+							<br>
+							<div class="drag">
+								<div class="bg"></div>
+								<div class="text" onselectstart="return false;">请拖动滑块解锁</div>
+								<div class="btn">>></div>
+							</div>
+							
+							<div class="line">
+								<div class="div_l">
+									<label for="reb">记住登录信息</label><input type="checkbox"
+										class="remb" value="1" name="remember" id="remember">
+								</div>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><a
+									href="/forget/">忘记密码?</a></label>
+							</div>
+							<!-- <div class="line">
+								<div class="div_l">
+									<label for="reb"><a href="">忘记密码?</a></label>
+								</div>
+							</div> -->
+							<div class="line line2">
+								<input type="submit" value="登 录" class="confirm agd">
+							</div>
+						</form>
+					</div>
+
+				</div>
+				<!-- <table>
+		<tr>
+		<td>用户名</td><td>密码</td>
+		</tr>
+		{% for line in data %}
+		<tr>
+		<td>{{ line.user }}</td>
+		<td>{{ line.pwd }}</td>
+		</tr>
+		{% endfor %}
+	</table> -->
+			</div>
+			<div class="inner_r">
+				<div class="rtop">
+					<span>没有账号?</span><br> <a href="/register/">立即注册 →</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="/static/base/user/js/jquery-3.1.1.min.js"></script>
+	<script src="/static/base/user/js/qj.js"></script>
+	<script src="/static/base/user/layer/layer.js"></script>
+	<p class="copy">
+		<iframe style="display: none" id="ajaxframe" name="ajaxframe"></iframe>
+
+		{% if messages %}
+		<script>
+{% for msg in messages %}
+    alert('{{ msg.message }}');
+{% endfor %}
+</script>
+		{% endif %}
+		<script>
+		var success = false;
+function checkName(){
+var test = document.getElementById("username").value;
+var test2 = document.getElementById("password").value;
+if(test.length < 11){
+	alert("请输入正确手机号")
+	return false;
+}
+if(test2 == ""){
+	alert("密码不能为空") 
+	return false;
+	}
+if(success == false){
+	alert("请滑动滑块解锁") 
+	return false;
+	}
+else{return true}
+}
+</script>
+		<script>
+    var result = 0;
+        //一、定义一个获取DOM元素的方法
+        var $ = function(selector){
+                return  document.querySelector(selector);
+            },
+            box = $(".drag"),//容器
+            bg = $(".bg"),//背景
+            text = $(".text"),//文字
+            btn = $(".btn"),//滑块
+            success = false,//是否通过验证的标志
+            distance = box.offsetWidth - btn.offsetWidth;//滑动成功的宽度（距离）
+
+        //二、给滑块注册鼠标按下事件
+        btn.onmousedown = function(e){
+
+            //1.鼠标按下之前必须清除掉后面设置的过渡属性
+            btn.style.transition = "";
+            bg.style.transition ="";
+
+            //说明：clientX 事件属性会返回当事件被触发时，鼠标指针向对于浏览器页面(或客户区)的水平坐标。
+
+            //2.当滑块位于初始位置时，得到鼠标按下时的水平位置
+            var e = e || window.event;
+            var downX = e.clientX;
+
+            //三、给文档注册鼠标移动事件
+            document.onmousemove = function(e){
+
+                var e = e || window.event;
+                //1.获取鼠标移动后的水平位置
+                var moveX = e.clientX;
+
+                //2.得到鼠标水平位置的偏移量（鼠标移动时的位置 - 鼠标按下时的位置）
+                var offsetX = moveX - downX;
+
+                //3.在这里判断一下：鼠标水平移动的距离 与 滑动成功的距离 之间的关系
+                if( offsetX > distance){
+                    offsetX = distance;//如果滑过了终点，就将它停留在终点位置
+                }else if( offsetX < 0){
+                    offsetX = 0;//如果滑到了起点的左侧，就将它重置为起点位置
+                }
+
+                //4.根据鼠标移动的距离来动态设置滑块的偏移量和背景颜色的宽度
+                btn.style.left = offsetX + "px";
+                bg.style.width = offsetX + "px";
+
+                //如果鼠标的水平移动距离 = 滑动成功的宽度
+                if( offsetX == distance){
+
+                    //1.设置滑动成功后的样式
+                    text.innerHTML = "验证通过";
+                    text.style.color = "#fff";
+                    btn.innerHTML = "√";
+                    btn.style.color = "green";
+                    bg.style.backgroundColor = "lightgreen";
+
+                    //2.设置滑动成功后的状态
+                    success = true;
+                    //成功后，清除掉鼠标按下事件和移动事件（因为移动时并不会涉及到鼠标松开事件）
+                    btn.onmousedown = null;
+                    document.onmousemove = null;
+
+                    //3.成功解锁后的回调函数
+                    setTimeout(function(){
+                    },100);
+                }
+            }
+
+            //四、给文档注册鼠标松开事件
+            document.onmouseup = function(e){
+
+                //如果鼠标松开时，滑到了终点，则验证通过
+                if(success){
+                	success=true;
+                }else{
+                    //反之，则将滑块复位（设置了1s的属性过渡效果）
+                    btn.style.left = 0;
+                    bg.style.width = 0;
+                    btn.style.transition = "left 1s ease";
+                    bg.style.transition = "width 1s ease";
+                }
+                //只要鼠标松开了，说明此时不需要拖动滑块了，那么就清除鼠标移动和松开事件。
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+
+
+        }
+    </script>
+</body>
+</html>

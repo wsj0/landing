@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* CSS Document */
+.clearfix:after{content:'\20';display:block;height:0;clear:both}
+.clearfix{zoom:1}
+.agd{ -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out;}
+
+/* header-css */
+.header{width:80%; min-width: 960px; margin:0 auto; padding-top: 2%; overflow:hidden}
+.header h1{float:left; border-right: 1px solid #fff; padding-right: 20px}
+.header strong{float:left; color: #fff; font-size: 26px; line-height: 50px; padding-left: 20px;}
+
+/* login css */
+body{background:url(../images/body-bg.jpg) no-repeat center fixed; background-size:cover;}
+.login_box{width:680px; position:relative;  background:#fff;  box-shadow:0 0 0 10px rgba(255,255,255,.1); border-radius:3px; display:block; padding-bottom:60px; overflow: hidden; margin:7% auto 3%;}
+.login_box .hdbox{width:280px; overflow:hidden; margin:0 auto 34px;}
+.login_box h2{font-size:16px; padding:10px 0 20px; text-align:center; color:#333; border-bottom:2px solid #ddd; float:left; width:140px; cursor:pointer;}
+.login_box h2.cur{border-color:#5E769B; color: #5E769B;background-color: #eeeeee;}
+.login_box .inner{width:590px; margin:50px auto 0; overflow: hidden;}
+.login_box .inner_l{float: left; width:320px; padding-right:50px; border-right: 1px dashed #ccc;}
+.login_box .ptip{font-size:12px; color:#666; height:56px; line-height:56px;}
+.login_box .line{width:280px; margin:0 auto 15px; overflow:hidden;}
+.login_box .line2{margin-bottom:0;}
+.login_box .line input{width:268px; height:38px; line-height:38px; border-radius:3px; padding-left:8px; border:1px solid #ccc;}
+.login_box .line .div_l{float: left;}
+.login_box .line .forgetmm{float:right; color:#9A0000; line-height: 36px;}
+.login_box .line .remb{width:auto;float:right;line-height:20px; border:none;}
+.login_box .line label{float:right;line-height:36px; color:#A9A9A9; margin-left:7px;}
+.login_box .line .confirm{width:278px; border-color:#5E769B; background:#5E769B; color:#fff; cursor:pointer; height:40px; font-size: 16px; padding-left: 0;}
+.login_box .line .confirm:hover{background:#2196F3; border-color:#2196F3;}
+.login_box .line .agreefor{float:left;}
+.login_box .line .agree{width:auto;float:left;line-height:20px;}
+.login_box .line .yzm{float:left; width:112px;}
+.login_box .line .code{float:right; width:150px; height:40px; background:#5E769B; border:0; border-radius:3px; color:#fff; cursor:pointer;}
+.login_box .line .code:hover{background:#2196F3; border-color:#2196F3;}
+.login_box .line .yzmimg{float: right; width:150px;}
+.login_box .yzline{margin:10px auto;}
+.login_box .line ul{width:290px;}
+.login_box .line ul li{float:left; width:92px; margin-right:1px; height:16px; line-height: 16px; background:#eee; font-size:12px; text-align:center; color:#000;}
+.login_box .line ul li.red{background:#C30000; color:#fff;}
+.login_box .line ul li.orange{background:orange; color:#fff;}
+.login_box .line ul li.green{background:#7BBE54; color:#fff;}
+.login_box .line ul li{background:#D6D6D6; color:#fff;}
+.login_box .cha_box .cha_list{display:none;}
+.login_box .cha_box .cur{display:block;}
+.login_box .errb{font-size:12px; color:#f00; text-align:center; padding-top:10px; display:none;}
+.login_box .inner_r{float: left; width:169px; padding-left: 50px;}
+.login_box .inner_r .rtop{font-size:14px; color:#444; margin-top: 6px;}
+.login_box .inner_r .rtop a{color:#9A0000; font-size: 18px; display: inline-block; margin-top: 5px;}
+
+/*注册页面*/
+.login_box .sjbox h3{color:#A9A9A9; font-size:16px; padding-top: 20px;}
+.login_box .sjbox span{color:#EDEDED;}
+.login_box .sjbox .sjlist{width:168px; margin:15px auto 0; overflow:hidden;}
+.login_box .sjbox .sj_in{width:190px;}
+.login_box .sjbox .sjlist a{float:left; display:block; margin:0 20px 20px 0; width:58px; height:58px; background:url(../images/sj.jpg) no-repeat 0 0;}
+.login_box .sjbox .sjlist a.sj2{background-position:-88px 0;}
+.login_box .sjbox .sjlist a.sj3{background-position:-176px 0;}
+.login_box .sjbox .sjlist a:hover{background-position:0 -58px;}
+.login_box .sjbox .sjlist a.sj2:hover{background-position:-88px -58px;}
+.login_box .sjbox .sjlist a.sj3:hover{background-position:-176px -58px;}
+
+.wrongstyle{border-color:#ff6060!important; color:#ff6060; background:url(../Images/error.png) no-repeat right center;}
+.rightstyle{border-color:#22CC77!important; color:#555; background:url(../Images/right.png) no-repeat right center;}
+.zcsuc p{line-height:26px;}
+/*忘记密码*/
+.forget_box{width:460px;}
+.forget_box .inner{width:400px;}
+.forget_box .inner_l{padding-right: 0; border-right: 0;width:400px;}
+
+
+/* copy-css */
+.copy{text-align: center; width:100%; margin:20px 0; color: #eee;}
+
+/* 动画 */
+.video_s{animation: video_s .3s ease; -moz-animation: video_s .3s ease; -webkit-animation: video_s .3s ease; -o-animation: video_s .3s ease; }
+@keyframes video_s
+{
+    from {top:0;}
+    to {top:56px;}
+}
+@-moz-keyframes video_s
+{
+    from {top:0;}
+    to {top:56px;}
+}
+
+@-webkit-keyframes video_s
+{
+    from {top:0;}
+    to {top:56px;}
+}
+
+@-o-keyframes video_s
+{
+    from {top:0;}
+    to {top:56px;}
+}

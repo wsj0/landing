@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel='stylesheet' type='text/css'  href='/static/div.css'/> div.css 文件格式有冲突，识别不到报错为/index/div.css  not foud-->
+ <style type="text/css">
+  #box{
+    width:450px;
+    height:300px;
+    position:absolute;
+    margin:2px;
+    background:#FFFFFF;
+    left:600px;
+    top:20px;
+}
+#line{
+    width:450px;
+    height:300px;
+    margin-top:20px;
+    left:130px;
+    background:#FFFFFF;
+}
+#boxline{
+	width:1000px;
+    height:310px;
+}
+#pie{
+	width:450px;
+	height:300px;
+	float:left;
+	left:130px;
+	background:#FFFFFF;
+	<!--CCCCFF-->
+}
+#linechart3{
+	width:450px;
+	height:300px;
+	left:145px;
+	float:left;
+	background:#FFFFFF;
+}
+body{
+    font-size: 11px;
+    font-family: 'Open Sans', sans-serif;
+    background:#F5F5F5 ;
+    text-align: center; 
+}
+   </style>
+</head> 
+ <meta charset="UTF-8">
+<script src='/static/echarts.js'></script>
+<script src='/static/jquery-3.3.1.min.js'></script>
+<title>Insert title here</title>
+
+</head>
+<body>
+
+<section>
+<!--#为id选择器 . 为类选择器 星号为所有选择-->
+
+	<div id="boxline">
+
+	<div id="box"> 
+		<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('box'));
+        // 指定图表的配置项和数据
+        var option1 = {
+            title: {
+                text: '柱状图',
+                link:  'https://blog.csdn.net/shuoSmallWhite/article/details/80091945'
+            },
+            tooltip: {},                              														//bldadd:鼠标放上显示组件提示框
+            legend: {  																						 //blfadd:图例组件展现了不同系列的标记(symbol)，颜色和名字。可以通过点击图例控制哪些系列不显示。
+                data:[{name:'传感器',
+                			icon:'circle'	
+                }]
+            },
+            xAxis: {
+                data: ["温度","湿度","污染度","光照度",]
+            },
+            yAxis: {},
+            series: [{
+                name: '传感器',
+                type: 'bar',
+                data: [{{list1.data}}, {{list2.data}}, {{list3.data}}, {{list4.data}}]//可以直接赋值给series.data数组
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        console.log({{list.data}});
+        /*function fun(){
+        $.ajax({
+        	url:"/index/",
+        	type:"post",
+        	dataType:"json",
+        	data:{},
+        	success:function(result){
+        		console.log(result)
+				option1.xAxis.data[0] = result["list"]; 
+				myChart1.setOption(option1); 
+        	}
+        }
+        })*/
+		myChart1.setOption(option1); 
+    </script>    </div> 
+    <div id="line">
+    <script type="text/javascript">
+    function randomData() {
+        now = new Date(+now + oneDay);
+        value = value + Math.random() * 21 - 10;
+        return {
+            name: now.toString(),
+            value: [
+                [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+                Math.round(value)
+            ]
+        }
+    }
+    var myChart = echarts.init(document.getElementById('line'));
+    var data = [];
+    var now = +new Date(2000, 9, 3);
+    var oneDay = 24 * 3600 * 1000;
+    var value = Math.random() * 1000;
+    for (var i = 0; i < 100; i++) {
+        data.push(randomData());
+    }
+
+    var option = {
+        title: {
+            text: '动态数据 + 时间坐标轴'
+        },
+        tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+                params = params[0];
+                var date = new Date(params.name);
+                return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+            },
+            axisPointer: {
+                animation: false
+            }
+        },
+        xAxis: {
+            type: 'time',
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            splitLine: {
+                show: false
+            }
+        },
+        series: [{
+            name: '模拟数据',
+            type: 'line',
+            showSymbol: false,
+            hoverAnimation: false,
+            data: data
+        }]
+    };
+
+    setInterval(function () {
+
+        for (var i = 0; i < 5; i++) {
+            data.shift();
+            data.push(randomData());
+        }
+
+        myChart.setOption({
+            series: [{
+                data: data
+            }]
+        });
+    }, 1000);
+    myChart.setOption(option);
+    </script>
+    </div>
+    </div>
+<div id="pielinechart">
+   <div id="pie">
+       <script type="text/javascript">
+       var myChart3 = echarts.init(document.getElementById('pie'));
+var option3 = {
+
+    title: {
+        text: 'Customized Pie',
+        left: 'center',
+        top: 10,
+        textStyle: {
+            color: '#000000'
+        }
+    },
+
+    tooltip : {
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c} ({d}%)"
+    },
+
+    visualMap: {    														//将数据映射到视觉元素（视觉通道）
+        show: false,
+        min: 10,
+        max: 60,
+        inRange: {
+            colorLightness: [0, 1]											//明暗度
+        }
+    },
+    series : [
+        {
+            name:'对比图',
+            type:'pie',
+            radius : '80%',												//饼图的半径
+            center: ['50%', '50%'],
+            data:[
+                {value:{{list1.data}}, name:'温度'},
+                {value:{{list2.data}}, name:'湿度'},
+                {value:{{list3.data}}, name:'光照度'},
+                {value:{{list3.data}}, name:'污染度'},
+               // {value:400, name:'搜索引擎'}
+            ].sort(function (a, b) { return a.value - b.value; }),//data 排序方向
+            roseType: 'radius',															//是否展示成南丁格尔图，通过半径区分数据大小。可选择两种模式
+            label: {
+                normal: {
+                    textStyle: {
+                        color: 'rgba(1, 1, 1, 100)'    //触角标签颜色
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        color: 'rgba(1, 1, 1, 100)'   //line lable
+                    },
+                    smooth: 0.2,
+                    length: 10,
+                    length2: 20
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '',//#c23531
+                    shadowBlur: 200,
+                    shadowColor: 'rgba(0, 0, 0, 0.3)'
+                }
+            },
+
+            animationType: 'scale',
+            animationEasing: 'elasticOut',
+            animationDelay: function (idx) {
+                return Math.random() * 200;
+            }
+        }
+    ]
+};
+	myChart3.setOption(option3);
+	
+</script>
+    </div>
+<div id="linechart3"> 
+		<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+       var myChart5 = echarts.init(document.getElementById('linechart3'));
+        /*option5 = {
+        		title:{
+        			text:"温湿度对比图"
+        		},
+       			 tooltip:{
+        			trigger:'axis'
+        		},
+        		xAxis: {
+        	        type: 'category',
+        	        boundaryGap : false,
+        	        data: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00','07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00']
+        	    },
+        	    yAxis: {
+        	        type: 'value'
+        	    },
+        	    yAxis: [
+        	            {
+        	                name: '温度(℃)',
+        	                type: 'value',
+        	                max: 300
+        	            },
+        	            {
+        	                name: '湿度(%rh)',
+        	                max: 500,
+        	                type: 'value',
+        	            }
+        	            
+        	        ],
+        	    series: [
+        	             {
+                    		name:'温度',
+                    		type:'line',
+                    		stack: '总量',
+                    		yAxisIndex: 0,
+                   			smooth: true,
+                   			data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'湿度',
+                    type:'line',
+                    stack: '总量',
+                    yAxisIndex:0,
+                    smooth:true,
+                    data:[152, 132, 110, 134, 190, 134, 114]
+                }]
+        	};
+*/
+		option5 = {
+		title:{
+			text:"温湿度对比图"
+		},
+			 tooltip:{
+			trigger:'axis'
+		},
+        /*tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c}次"
+         },*/
+        toolbox: {
+            show : true,
+            top:10,
+            right:10,
+            feature : {
+                mark : {show: true},
+                magicType : {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        grid:{
+            top:60,
+            right:70,
+            bottom:30,
+            left:60
+        },
+        legend: {
+            top:32,
+            left:'center',
+            data:['温度','湿度']
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00','07:00', '08:00', '09:00', '10:00', '11:00', '12:00',
+                        '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00','20:00', '21:00', '22:00', '23:00', '24:00']
+            }
+        ],
+        yAxis : [
+            {
+                type: 'value',
+                //name:"管\n线\n查\n询\n次\n数\n︵\n次\n︶",
+                nameLocation:"center",
+                nameGap:35,
+                nameRotate:0,
+                nameTextStyle:{
+                    fontSize: 16,
+                },
+                //默认以千分位显示，不想用的可以在这加一段
+                axisLabel : {   //调整左侧Y轴刻度， 直接按对应数据显示
+                    show:true,
+                    showMinLabel:true,
+                    showMaxLabel:true,
+                    formatter: function (value) {
+                        return value;
+                    }
+                }
+            },
+            {
+                type: 'value',
+               // name:"在\n线\n调\n用\n次\n数\n︵\n次\n︶",
+                nameLocation:"center",
+                nameGap:35,
+                nameRotate:0,
+                nameTextStyle:{
+                    fontSize: 16,
+                },
+                //默认以千分位显示，不想用的可以在这加一段
+                axisLabel : {   //调整左侧Y轴刻度， 直接按对应数据显示
+                    show:true,
+                    showMinLabel:true,
+                    showMaxLabel:true,
+                    formatter: function (value) {
+                        return value;
+                    }
+                }
+            }
+        ],
+        series : [
+            {
+                name:'温度',
+                type:'line',
+                smooth: true,
+                yAxisIndex: 0,
+                data:[{{info1.tem_value}},{{info2.tem_value}},{{info3.tem_value}},{{info4.tem_value}},{{info5.tem_value}},-6,3,0,0,0,0,0],
+                itemStyle : { normal: {label : {show: true}}},
+            },
+            {
+                name:'湿度',
+                type:'line',
+                smooth: true,
+                yAxisIndex: 1,
+                data:[{{info1.hum_value}},{{info2.hum_value}},{{info3.hum_value}},{{info4.hum_value}},{{info5.hum_value}},4,3,0,0,0,0,0],
+                itemStyle : { normal: {label : {show: true}}},
+            }
+        ]
+    };
+        myChart5.setOption(option5);
+        </script>
+</div>
+</div>
+</section>
+</body>
+</html>
